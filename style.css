@@ -1,0 +1,266 @@
+@font-face {
+   font-family: 'gotham';
+   src: url('source/fonts/GOTHAM-LIGHT.TTF') format('truetype');
+}
+
+@font-face {
+   font-family: 'gothamBold';
+   src: url('source/fonts/GOTHAM-BOLD.TTF') format('truetype');
+}
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family:  gotham;
+}
+
+#landing {
+  width: 100%;
+  height: 100%;
+  background-image: url(source/image_bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #101010;
+}
+
+#Crescendo {
+  position: fixed;
+  float: left;
+  margin-top: 230px;
+  margin-left: 510px;
+}
+
+#landing #logo {
+  position: fixed;
+  float: left;
+  margin-top: 280px;
+  margin-left: 280px;
+}
+
+
+/* --- BUSCADOR --- */
+
+#landing input {
+  float: inherit;
+  margin-left: 535px;
+  margin-top: 390px;
+  width: 550px;
+  height: 60px;
+  border-radius: 50px;
+  border: none;
+  border-bottom-style: none;
+  padding: 8px;
+  overflow: visible;
+  font-size: 2em;
+  box-shadow: -20px 20px 40px #000000;
+}
+
+#landing input[type=text] {
+  background-image: url('source/Iconos/Lupa.png');
+  background-size: 38px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 55px;
+  color: #101010;
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.15;
+}
+
+
+/* ----------------------- */
+#izquierda #logo {
+  position: static;
+  float: left;
+  margin-top: 25px;
+  margin-left: 120px;
+}
+
+
+/* --- Biblioteca --- */
+#izquierda {
+  background-color: #111111;
+  width: 300px;
+  height: 100%;
+  float: left;
+  position: sticky;
+}
+
+
+/*#biblioteca:hover .album {
+  transform: translate(0, -50px);
+  box-shadow: -20px 20px 40px #000000;
+}*/
+
+#derecha {
+  background-color: #aaf0b3;
+  height: 100%;
+  background-image: url('source/covers/01.jpg');
+  background-size: cover;
+  margin-left: 300px;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px -51px 89px 32px rgba(36,67,79,0.66);
+}
+
+#biblioteca {
+  margin-top: 60px;
+}
+
+ul {
+  list-style-type: none;
+
+}
+
+li {
+  display: inline-block;
+  padding: 15px;
+}
+
+.album {
+  position: relative;
+  width: 200px;
+}
+
+.album:hover {
+  box-shadow: 0px 32px 60px 10px rgba(0,0,0,0.64);
+}
+
+.image {
+  /*display: block;*/
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #44818d;
+
+}
+
+.album:hover .overlay {
+
+  box-shadow: inset 0px 0px 150px 5px rgba(0, 0, 0, 1);
+  opacity: 0.7;
+}
+
+.play {
+  background-image: url('source/Iconos/Forma 1.png');
+  width: 50%;
+  height: 50%;
+  background-size: 75%;
+  background-position: center;
+  padding: 50%;
+  background-repeat: no-repeat;
+}
+
+#filtros {
+  float: left;
+  padding: 40px;
+}
+
+#filtros h3 {
+color: #fff;
+font-family: gothamBold;
+}
+/*---buscador biblioteca---*/
+#buscar input {
+  margin-top: 33px;
+  margin-left: 55px;
+  width: 250px;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  border-bottom-style: none;
+  padding: 2px;
+  overflow: visible;
+  font-size: 1.5em;
+  box-shadow: -3px 3px 15px #000000;
+}
+
+#buscar input[type=text] {
+  background-image: url('source/Iconos/Lupa.png');
+  background-size: 20px;
+  background-position: 6px 6px;
+  background-repeat: no-repeat;
+  padding-left: 35px;
+  color: #101010;
+}
+
+/*---Filtros botones "I feel"---*/
+#filtros button {
+  -webkit-border-radius: 51;
+  -moz-border-radius: 51;
+  border-radius: 51px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 15px #000000;
+  -moz-box-shadow: 0px 0px 15px #000000;
+  box-shadow: 0px 0px 15px #000000;
+  color: #fff;
+  font-size: 14px;
+  background: #232323;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 5px 3px;
+}
+
+#filtros button:hover {
+  background: #121212;
+  text-decoration: none;
+}
+/*---Filtros "How many"---*/
+#many {
+color: #fff;
+font-size: 14px;
+}
+/*---Filtros "Where"---*/
+select#where {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 200px;
+}
+/*---Filtros "How long"---*/
+#long {
+  color: #fff;
+}
+/*---Filtro "How Popular"---*/
+#popularity p {
+  color: #fff;
+  text-align: center;
+}
+
+#popularity input[type=range] {
+  width: 100%;
+}
+
+
+
+/* ------------------ */
