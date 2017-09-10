@@ -19,8 +19,16 @@ var view = {
     var busqueda = document.createElement('div');
     busqueda.id = 'buscar';
     busqueda.innerHTML = `
-    <form action="buscar"><input type="text" placeholder="Buscar"></form>
+    <form action="buscar"><input type="text" id="buscar" placeholder="Buscar"></form>
     `;
+    var that = this;
+    var search = busqueda.querySelector('input');
+    var album = document.getElementsByTagName("span");
+    search.addEventListener('keyup', function(e){
+      var select = this.value;
+      console.log(select);
+      that.onBusqueda(album, select);
+    }, false);
     return busqueda;
   },
 
@@ -30,6 +38,8 @@ var view = {
     <div class="album">
       <a href="#">
       <img src="${albumes.cover}" alt="Avatar" class="image">
+      <span>${albumes.album}</span>
+      <h3>${albumes.autor}</h3>
       <div class="overlay">
         <div class="play"></div>
       </div>
