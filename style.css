@@ -115,7 +115,8 @@ body, html {
 
 ul {
   list-style-type: none;
-
+  display: flex;
+  flex-flow: wrap;
 }
 
 ul a {
