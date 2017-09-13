@@ -93,15 +93,9 @@ body, html {
   float: left;
 }
 
-
-/*#biblioteca:hover .album {
-  transform: translate(0, -50px);
-  box-shadow: -20px 20px 40px #000000;
-}*/
-
 #derecha {
   background-color: #aaf0b3;
-  height: 100%;
+  width: auto;
   background-image: url('source/covers/01.jpg');
   background-size: cover;
   margin-left: 300px;
@@ -110,36 +104,30 @@ body, html {
 }
 
 #biblioteca {
-  margin-top: 60px;
+  display: inline;
+  margin-top: 5%;
 }
 
-ul {
-  list-style-type: none;
-  display: flex;
-  flex-flow: wrap;
+.album {
+  display: inline-flex;
+  position: sticky;
+  width: 200px;
 }
 
-ul a {
+.album a {
   text-decoration: none;
   color: #fff;
   text-align: center;
 }
 
-ul span {
+.album span {
   font-family: gotham;
   font-size: 18px;
   text-align: center;
 }
 
-
-li {
-  display: inline-block;
-  padding: 15px;
-}
-
-.album {
-  position: relative;
-  width: 200px;
+.album h3 {
+  margin-top: 5px;
 }
 
 .album:hover {
@@ -147,9 +135,8 @@ li {
 }
 
 .image {
-  /*display: block;*/
-  width: 100%;
-  height: auto;
+  width: 90%;
+  margin: auto;
 }
 
 .overlay {

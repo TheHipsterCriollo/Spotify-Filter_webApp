@@ -23,7 +23,7 @@ var view = {
     `;
     var that = this;
     var search = busqueda.querySelector('input');
-    var album = document.getElementsByTagName("span");
+    var album = document.getElementsByTagName('a');
     search.addEventListener('keyup', function(e){
       var select = this.value;
       console.log(select);
@@ -33,18 +33,17 @@ var view = {
   },
 
   getAlbum: function getAlbum(albumes) {
-    var album = document.createElement('li');
+    var album = document.createElement('div');
+    album.className = 'album';
     album.innerHTML = `
-    <div class="album">
       <a href="#">
-      <img src="${albumes.cover}" alt="Avatar" class="image">
+      <img src="${albumes.cover}" alt="Avatar" class="image"><br>
       <span>${albumes.album}</span>
       <h3>${albumes.autor}</h3>
       <div class="overlay">
-        <div class="play"></div>
+      <div class="play"></div>
       </div>
       </a>
-    </div>
     `;
     return album;
   },
@@ -52,12 +51,10 @@ var view = {
   getBiblioteca: function getBiblioteca(albumes) {
     var biblio = document.createElement('div');
     biblio.id = 'biblioteca';
-    var biblioteca = document.createElement('ul');
     var that = this;
     albumes.forEach(function(album) {
       var thisAlbum = that.getAlbum(album);
-      biblioteca.appendChild(thisAlbum);
-      biblio.appendChild(biblioteca);
+      biblio.appendChild(thisAlbum);
     });
     return biblio;
   },

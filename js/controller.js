@@ -7,7 +7,7 @@ var controller = function controller(albumes) {
       if (f.innerHTML.toLowerCase().search(select.toLowerCase()) == -1) {
         f.parentNode.style.display = "none";
       } else{
-        f.parentNode.style.display = "block";
+        f.parentNode.style.display = "inline-flex";
       }
     });
   }
