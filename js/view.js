@@ -79,13 +79,19 @@ var view = {
     many.id = 'many';
     many.innerHTML = `
     <h3> How Many: </h3>
-    <form>
-    <input type="radio" name="many" value="me"> Just Me <br>
-    <input type="radio" name="many" value="couple"> Couple <br>
-    <input type="radio" name="many" value="party"> Party-4-Three <br>
-    <input type="radio" name="many" value="cares"> Who Cares? <br>
+    <form id='fMany'>
+    <input type="radio" name="many" value="me" id="cuantos"> Just Me <br>
+    <input type="radio" name="many" value="couple" id="cuantos"> Couple <br>
+    <input type="radio" name="many" value="party" id="cuantos"> Party-4-Three <br>
+    <input type="radio" name="many" value="cares" id="cuantos"> Who Cares? <br>
     </form>
     `;
+    var radioButtons = document.getElementsByName('many');
+    var that = this;
+    many.addEventListener('click', function(e){
+      that.manySelected(radioButtons);
+    });
+
     return many;
   },
 
@@ -95,6 +101,7 @@ var view = {
     place.innerHTML = `
     <h3> Where: </h3>
     <select id="where" name="where">
+      <option value="">Select</option>  
        <option value="1">My Room</option>
        <option value="2">Living</option>
        <option value="3">Beat the House</option>
