@@ -204,7 +204,7 @@ font-family: gothamBold;
 }
 
 /*---Filtros botones "I feel"---*/
-#filtros button {
+#filtros .button {
   -webkit-border-radius: 51;
   -moz-border-radius: 51;
   border-radius: 51px;
@@ -220,7 +220,7 @@ font-family: gothamBold;
   margin: 5px 3px;
 }
 
-#filtros button:hover {
+#filtros .button:hover {
   background: #121212;
   text-decoration: none;
 }

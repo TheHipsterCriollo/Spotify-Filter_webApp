@@ -8,7 +8,69 @@
 </head>
 
 <body>
-<div id="container"></div>
+  <div id="container">
+    <div id="izquierda">
+      <img id="logo" src="source/Crescendo_logo.png" alt="Crescendo_logo" width="50" height="50">
+      <div id="filtros">
+        <div id="feeling">
+          <h3> I feel: </h3>
+          <input type="button" name="feel" class="button" value="Happy" />
+          <input type="button" name="feel" class="button" value="Nostalgic" />
+          <input type="button" name="feel" class="button" value="Warm" />
+          <input type="button" name="feel" class="button" value="Rock that" />
+          <input type="button" name="feel" class="button" value="Concentrated" />
+          <input type="button" name="feel" class="button" value="Party all night" />
+          <input type="button" name="feel" class="button" value="Raise my power" />
+        </div>
+        <div id="many">
+          <h3> How Many: </h3>
+          <form id="fMany">
+            <input type="radio" name="many" value="me" id="cuantos"> Just Me <br>
+            <input type="radio" name="many" value="couple" id="cuantos"> Couple <br>
+            <input type="radio" name="many" value="party" id="cuantos"> Party-4-Three <br>
+            <input type="radio" name="many" value="cares" id="cuantos"> Who Cares? <br>
+          </form>
+        </div>
+        <div id="where">
+          <h3> Where: </h3>
+          <select id="where" name="where">
+      <option value="">Select</option>
+       <option value="1">My Room</option>
+       <option value="2">Living</option>
+       <option value="3">Beat the House</option>
+       <option value="4">Street</option>
+       <option value="5">The Gym</option>
+       <option value="6">Turn on the Disco</option>
+    </select>
+        </div>
+        <div id="long">
+          <h3> How long: </h3>
+          <form>
+            <input type="radio" name="long" value="30"> For a while <br>
+            <input type="radio" name="long" value="45"> Around and Hour <br>
+            <input type="radio" name="long" value="50"> Three hours <br>
+            <input type="radio" name="long" value="60"> Time is infinity <br>
+          </form>
+        </div>
+        <div id="popularity">
+          <h3> How popular: </h3>
+          <form>
+            <input type="range" min="1" max="5" list="popu" id="popul">
+            <datalist id="popu">
+    <option value="1">
+    </option><option value="2">
+    </option><option value="3">
+    </option><option value="4">
+    </option><option value="5">
+    </option></datalist>
+            <p id="popularidad"> Rango </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <script src="js/albumes.js"></script>
   <script src="js/view.js"></script>
