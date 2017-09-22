@@ -259,7 +259,7 @@ var albumes = [
     url: "https://open.spotify.com/album/1uG9cIT7IRuq9NqFvKFUsI",
     feel: "Nostalgic",
     many: "me",
-    where: "",
+    where: "4",
     long: "60",
     popularity: "1"
   },
@@ -270,7 +270,7 @@ var albumes = [
     url: "https://open.spotify.com/album/0uMIzWh1uEpHEBell4rlF8",
     feel: "Party all night",
     many: "cares",
-    where: "",
+    where: "2",
     long: "30",
     popularity: "4"
   },
@@ -281,7 +281,7 @@ var albumes = [
     url: "https://open.spotify.com/album/0eFHYz8NmK75zSplL5qlfM",
     feel: "Rock that",
     many: "couple",
-    where: "",
+    where: "1",
     long: "30",
     popularity: "2"
   },
@@ -292,7 +292,7 @@ var albumes = [
     url: "https://open.spotify.com/album/1AKNhvhITpApjr5u7q5is3",
     feel: "Warm",
     many: "couple",
-    where: "",
+    where: "3",
     long: "60",
     popularity: "3"
   },
@@ -302,8 +302,8 @@ var albumes = [
     cover: "./source/covers/28.jpg",
     url: "https://open.spotify.com/album/7Dgly4mhNl8SqWGVz13OXU",
     feel: "Warm",
-    many: "Three",
-    where: "",
+    many: "couple",
+    where: "3",
     long: "45",
     popularity: "5"
   },
@@ -314,7 +314,7 @@ var albumes = [
     url: "https://open.spotify.com/album/2R7iJz5uaHjLEVnMkloO18",
     feel: "Raise my power",
     many: "cares",
-    where: "",
+    where: "5",
     long: "30",
     popularity: "4"
   },
@@ -325,7 +325,7 @@ var albumes = [
     url: "https://open.spotify.com/album/2R7iJz5uaHjLEVnMkloO18",
     feel: "Raise my power",
     many: "me",
-    where: "",
+    where: "4",
     long: "50",
     popularity: "2"
   }

@@ -21,19 +21,12 @@ var controller = function controller(albumes) {
       }
     },
 
-    view.onMany = function onMany(radioButtons) {
-      //console.log(albumes);
-      filter = Array.prototype.filter;
-      for (var x = 0; x < radioButtons.length; x++) {
-        var listaMany;
-        if (radioButtons[x].checked) {
+    view.onMany = function onMany() {
           var listaMany = albumes.filter(function(albumes) {
-            return albumes.many == radioButtons[x].value;
+            return albumes.many == document.querySelector('#fMany').many.value;;
           });
           console.log(listaMany);
           view.render(listaMany);
-        }
-      }
     },
 
     view.onWhere = function onWhere(placed) {
@@ -44,17 +37,12 @@ var controller = function controller(albumes) {
       view.render(listaWhere);
     },
 
-    view.onLong = function onLong(radioLong) {
-      filter = Array.prototype.filter;
-      for (var x = 0; x < radioLong.length; x++) {
-        if (radioLong[x].checked) {
-          var listalong = albumes.filter(function(albumes) {
-            return albumes.long == radioLong[x].value;
-          });
-          console.log(listalong);
-          view.render(listalong);
-        }
-      }
+    view.onLong = function onLong() {
+      var listalong = albumes.filter(function(albumes) {
+        return albumes.long == document.querySelector('#howLong').long.value;
+      });
+      console.log(listalong);
+      view.render(listalong);
     },
 
     view.onPopu = function onPopu(popularity) {
@@ -76,8 +64,8 @@ var controller = function controller(albumes) {
     //   modal.style.display = "none";
     // }
 
-  //view.render(albumes);
-  view.setEventsFilters();
+    //view.render(albumes);
+    view.setEventsFilters();
 }
 
 controller(albumes);

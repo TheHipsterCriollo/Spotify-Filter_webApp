@@ -60,6 +60,8 @@ var view = {
     var radioLong = document.getElementsByName('long');
     var popu = popularity.querySelector('#popul');
 
+    
+
     feel.addEventListener('click', function() {
       that.onFeel(botones);
     });
