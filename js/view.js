@@ -29,6 +29,8 @@ var view = {
       </div>
       </a>
     `;
+    // var modal = this.getModalAlbumes(albumes);
+    // biblio.appendChild(modal);
     return album;
   },
 
@@ -40,9 +42,6 @@ var view = {
       var thisAlbum = that.getAlbum(album);
       biblio.appendChild(thisAlbum);
     });
-
-    var modal = this.getModalAlbumes(albumes);
-    biblio.appendChild(modal);
     return biblio;
   },
 
@@ -78,61 +77,64 @@ var view = {
     });
   },
 
-  getModalAlbumes: function getModalAlbumes(albumes) {
-    var div = document.createElement('div');
-    div.setAttribute('class', 'modal');
-    div.id = 'myModal';
-    div.innerHTML = `
-<span class="close">×</span>
-<img class="modal-content" id="contenido">
-<div id="caption"></div>
-`;
-
-    // MODAL
-    var modal = document.querySelector('#myModal');
-    // var img = document.getElementById('albums');
-    var img = document.getElementsByTagName('a');
-    // var img = document.querySelector('a');
-    var modalImg = document.getElementById('contenido');
-    var captionText = document.getElementById('caption');
-    var span = document.getElementsByClassName('close')[0];
-
-    var that = this;
-
-
-
-    // img.addEventListener('click', function() {
-    //   console.log(this);
-    //   modal.style.display = "block";
-    //   modalImg.src = that.src;
-    //   captionText.innerHTML = that.alt;
-    // });
-
-    // span.addEventListener('click', function() {
-    //   modal.style.display = "none";
-    // });
-    console.log(modal);
-
-    img.onclick = function onclick() {
-      modal.style.display = "block";
-      modalImg.src = albumes.cover;
-      captionText.innerHTML = albumes.album;
-    };
-    span.onclick = function onclick() {
-      modal.style.display = "none";
-    };
-
-    return div;
-  },
+//   getModalAlbumes: function getModalAlbumes(albumes) {
+//     var div = document.createElement('div');
+//     div.setAttribute('class', 'modal');
+//     div.setAttribute('id', 'myModal');
+//     // div.id = 'myModal';
+//     div.innerHTML = `
+// <span class="close">×</span>
+// <img class="modal-content" id="contenido">
+// <div id="caption"></div>
+// `;
+//
+//     // MODAL
+//     // var modal = document.querySelector('#myModal');
+//     // var modal = document.getElementById('myModal');
+//
+//     // var img = document.getElementsByClassName('album');
+//     var img = biblio.getElementsByTagName('a');
+//     // var img = biblio.querySelector('img');
+//     var modalImg = document.getElementById('contenido');
+//     var captionText = document.getElementById('caption');
+//     var span = document.getElementsByClassName('close')[0];
+//
+//     var that = this;
+//
+//     console.log(img);
+//
+//     // img.addEventListener('click', function() {
+//     //   console.log(this);
+//     //   div.style.display = "block";
+//     //   modalImg.src = albumes.cover;
+//     //   captionText.innerHTML = albumes.album;
+//     // });
+//     //
+//     // span.addEventListener('click', function() {
+//     //   div.style.display = "none";
+//     // });
+//
+//
+//     img.onclick = function onclick() {
+//       div.style.display = "block";
+//       modalImg.src = albumes.cover;
+//       captionText.innerHTML = albumes.album;
+//     };
+//     span.onclick = function onclick() {
+//       div.style.display = "none";
+//     };
+//
+//     return div;
+//   },
 
   render: function(listaAlbumes) {
-    var main = document.getElementById('container');
-    var derecha = document.createElement('div');
-    derecha.id = 'derecha';
+    var derecha = document.getElementById('derecha');
+    derecha.innerHTML=``;
+
     var biblioteca = this.getBiblioteca(listaAlbumes);
     var busqueda = this.getForm();
     derecha.appendChild(busqueda);
     derecha.appendChild(biblioteca);
-    main.appendChild(derecha);
+
   }
 };
