@@ -1,4 +1,5 @@
 var controller = function controller(albumes) {
+  view.render(albumes);
   view.onBusqueda = function onBusqueda(album, select) {
       forEach = Array.prototype.forEach;
       forEach.call(album, function(f) {
@@ -62,8 +63,20 @@ var controller = function controller(albumes) {
       });
       console.log(popularity);
       view.render(listaPopu);
-    }
-  view.render(albumes);
+    },
+
+    // view.onModal = function onModal(modal, img, modalImg, captionText){
+    //   modal.style.display = "block";
+    //   modalImg.src = this.src;
+    //   captionText.innerHTML = this.alt;
+    //   console.log(modal);
+    // },
+    //
+    // view.closeModal = function (modal) {
+    //   modal.style.display = "none";
+    // }
+
+  //view.render(albumes);
   view.setEventsFilters();
 }
 

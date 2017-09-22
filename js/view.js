@@ -11,7 +11,6 @@ var view = {
     var album = document.getElementsByTagName('a');
     search.addEventListener('keyup', function(e) {
       var select = this.value;
-      console.log(select);
       that.onBusqueda(album, select);
     }, false);
     return busqueda;
@@ -22,7 +21,7 @@ var view = {
     album.className = 'album';
     album.innerHTML = `
       <a href="#">
-      <img src="${albumes.cover}" alt="Avatar" class="image"><br>
+      <img src="${albumes.cover}" id="albums" alt="Avatar" class="image"><br>
       <span>${albumes.album}</span>
       <h3>${albumes.autor}</h3>
       <div class="overlay">
@@ -41,6 +40,9 @@ var view = {
       var thisAlbum = that.getAlbum(album);
       biblio.appendChild(thisAlbum);
     });
+
+    var modal = this.getModalAlbumes(albumes);
+    biblio.appendChild(modal);
     return biblio;
   },
 
@@ -59,7 +61,7 @@ var view = {
     var radioLong = document.getElementsByName('long');
     var popu = popularity.querySelector('#popul');
 
-    feel.addEventListener('click', function () {
+    feel.addEventListener('click', function() {
       that.onFeel(botones);
     });
     where.addEventListener('change', function() {
@@ -74,6 +76,53 @@ var view = {
     popularity.addEventListener('change', function() {
       that.onPopu(popu.value);
     });
+  },
+
+  getModalAlbumes: function getModalAlbumes(albumes) {
+    var div = document.createElement('div');
+    div.setAttribute('class', 'modal');
+    div.id = 'myModal';
+    div.innerHTML = `
+<span class="close">×</span>
+<img class="modal-content" id="contenido">
+<div id="caption"></div>
+`;
+
+    // MODAL
+    var modal = document.querySelector('#myModal');
+    // var img = document.getElementById('albums');
+    var img = document.getElementsByTagName('a');
+    // var img = document.querySelector('a');
+    var modalImg = document.getElementById('contenido');
+    var captionText = document.getElementById('caption');
+    var span = document.getElementsByClassName('close')[0];
+
+    var that = this;
+
+
+
+    // img.addEventListener('click', function() {
+    //   console.log(this);
+    //   modal.style.display = "block";
+    //   modalImg.src = that.src;
+    //   captionText.innerHTML = that.alt;
+    // });
+
+    // span.addEventListener('click', function() {
+    //   modal.style.display = "none";
+    // });
+    console.log(modal);
+
+    img.onclick = function onclick() {
+      modal.style.display = "block";
+      modalImg.src = albumes.cover;
+      captionText.innerHTML = albumes.album;
+    };
+    span.onclick = function onclick() {
+      modal.style.display = "none";
+    };
+
+    return div;
   },
 
   render: function(listaAlbumes) {
