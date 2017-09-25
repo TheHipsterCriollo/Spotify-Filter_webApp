@@ -1,11 +1,11 @@
 @font-face {
-   font-family: 'gotham';
-   src: url('source/fonts/GOTHAM-LIGHT.TTF') format('truetype');
+  font-family: 'gotham';
+  src: url('source/fonts/GOTHAM-LIGHT.TTF') format('truetype');
 }
 
 @font-face {
-   font-family: 'gothamBold';
-   src: url('source/fonts/GOTHAM-BOLD.TTF') format('truetype');
+  font-family: 'gothamBold';
+  src: url('source/fonts/GOTHAM-BOLD.TTF') format('truetype');
 }
 
 body, html {
@@ -16,7 +16,7 @@ body, html {
 
 * {
   box-sizing: border-box;
-  font-family:  gotham;
+  font-family: gotham;
 }
 
 #landing {
@@ -47,9 +47,9 @@ body, html {
 
 #landing input {
   float: inherit;
-  margin-left: 535px;
+  margin-left: 735px;
   margin-top: 390px;
-  width: 550px;
+  width: 200px;
   height: 60px;
   border-radius: 50px;
   border: none;
@@ -76,6 +76,7 @@ body, html {
 
 
 /* ----------------------- */
+
 #izquierda #logo {
   position: static;
   float: left;
@@ -89,19 +90,20 @@ body, html {
 #izquierda {
   background-color: #111111;
   width: 300px;
-  height: 1150px;
+  min-height: 1350px;
   float: left;
 }
 
 #derecha {
   background-color: #aaf0b3;
   width: auto;
-  background-image: url('source/covers/01.jpg');
+  background-image: url('source/image_bg.png');
   background-size: cover;
   margin-left: 300px;
   background-repeat: no-repeat;
-  box-shadow: inset 0px -51px 89px 32px rgba(36,67,79,0.66);
-  height: 1150px;
+  box-shadow: inset 0px -51px 89px 32px rgba(36, 67, 79, 0.66);
+  min-height: 1350px;
+  max-height: 3000px;
 }
 
 #biblioteca {
@@ -132,7 +134,7 @@ body, html {
 }
 
 .album:hover {
-  box-shadow: 0px 32px 60px 10px rgba(0,0,0,0.64);
+  box-shadow: 0px 32px 60px 10px rgba(0, 0, 0, 0.64);
 }
 
 .image {
@@ -150,12 +152,10 @@ body, html {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #44818d;
-
+  background-color: #936F4D;
 }
 
 .album:hover .overlay {
-
   box-shadow: inset 0px 0px 150px 5px rgba(0, 0, 0, 1);
   opacity: 0.7;
 }
@@ -176,11 +176,13 @@ body, html {
 }
 
 #filtros h3 {
-color: #fff;
-font-family: gothamBold;
+  color: #fff;
+  font-family: gothamBold;
 }
 
+
 /*---buscador biblioteca---*/
+
 #buscar input {
   margin-top: 33px;
   margin-left: 55px;
@@ -204,7 +206,9 @@ font-family: gothamBold;
   color: #101010;
 }
 
+
 /*---Filtros botones "I feel"---*/
+
 #filtros .button {
   -webkit-border-radius: 51;
   -moz-border-radius: 51;
@@ -225,36 +229,48 @@ font-family: gothamBold;
   background: #121212;
   text-decoration: none;
 }
+
+
 /*---Filtros "How many"---*/
+
 #many {
-color: #fff;
-font-size: 14px;
+  color: #fff;
+  font-size: 14px;
 }
+
+
 /*---Filtros "Where"---*/
+
 select#where {
-   -webkit-appearance: button;
-   -webkit-border-radius: 2px;
-   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-   -webkit-padding-end: 20px;
-   -webkit-padding-start: 2px;
-   -webkit-user-select: none;
-   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-   background-position: 97% center;
-   background-repeat: no-repeat;
-   border: 1px solid #AAA;
-   color: #555;
-   font-size: inherit;
-   overflow: hidden;
-   padding: 5px 10px;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-   width: 200px;
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  color: #555;
+  font-size: inherit;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
 }
+
+
 /*---Filtros "How long"---*/
+
 #long {
   color: #fff;
 }
+
+
 /*---Filtro "How Popular"---*/
+
 #popularity p {
   color: #fff;
   text-align: center;
@@ -264,87 +280,162 @@ select#where {
   width: 100%;
 }
 
+.btn_play {
+  background: #45A294;
+  background-image: -webkit-linear-gradient(top, #45A294, #70CAA7);
+  background-image: -moz-linear-gradient(top, #45A294, #70CAA7);
+  background-image: -ms-linear-gradient(top, #45A294, #70CAA7);
+  background-image: -o-linear-gradient(top, #45A294, #70CAA7);
+  background-image: linear-gradient(to bottom, #45A294, #70CAA7);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-left: 35%;
+  font-family: gotham;
+}
+
+.btn_play:hover {
+  background: #59BCA3;
+  background-image: -webkit-linear-gradient(top, #59BCA3, #70CAA7);
+  background-image: -moz-linear-gradient(top, #59BCA3, #70CAA7);
+  background-image: -ms-linear-gradient(top, #59BCA3, #70CAA7);
+  background-image: -o-linear-gradient(top, #59BCA3, #70CAA7);
+  background-image: linear-gradient(to bottom, #59BCA3, #70CAA7);
+  text-decoration: none;
+}
+
+
 /*---Modal---*/
 
+.modal-open {
+  overflow: hidden;
+}
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
 }
 
-/* Modal Content (image) */
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  -o-transition: -o-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  -o-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0)
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
 .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+  position: relative;
+  background-color: #111111;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  color: #fff;
 }
 
-/* Caption of Modal Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
+.modal-content img {
+  margin-left: 25%;
 }
 
-/* Add Animation */
-.modal-content, #caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
 }
 
-@-webkit-keyframes zoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
 }
 
-@keyframes zoom {
-    from {transform: scale(0.1)}
-    to {transform: scale(1)}
+.modal-header {
+  padding: 15px;
 }
 
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+.modal-header .close {
+  margin-top: -2px;
 }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+.modal-title {
+  margin: 0;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
+.modal-body {
+  position: relative;
+  padding: 15px;
 }
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+@media (min-width:768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+    width: 300px;
+  }
+}
+
+@media (min-width:992px) {
+  .modal-lg {
+    width: 900px;
+  }
+}
+
 
 /*-----------*/
-
 
 
 /* ------------------ */

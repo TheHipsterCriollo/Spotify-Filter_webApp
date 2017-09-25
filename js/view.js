@@ -29,8 +29,11 @@ var view = {
       </div>
       </a>
     `;
-    // var modal = this.getModalAlbumes(albumes);
-    // biblio.appendChild(modal);
+    var that = this;
+    album.querySelector('a').onclick = function() {
+      var modal = that.getModalAlbum(albumes);
+      album.appendChild(modal);
+    };
     return album;
   },
 
@@ -43,6 +46,65 @@ var view = {
       biblio.appendChild(thisAlbum);
     });
     return biblio;
+  },
+
+  getModalAlbum: function getModalAlbum(infoAlbum) {
+    var div = document.createElement('div');
+
+    div.innerHTML = `
+      <div class="modal-backdrop fade"></div>
+      <div class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h1 class="modal-title" align="center">${infoAlbum.album}</h1>
+            </div>
+            <div class="modal-body">
+              <img src="${infoAlbum.cover}" width="300" height="300">
+              <h3 align="center">${infoAlbum.autor}</h3>
+              <input type="button" class="btn_play" align="center" value="REPRODUCIR">
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    `;
+
+    // seleccionamos el elemento con la clase modal
+    var modal = div.querySelector('.modal');
+    // seleccionamos el elemento con la clase modal-backdrop
+    var backdrop = div.querySelector('.modal-backdrop');
+
+    var boton = div.querySelector('input');
+    boton.onclick = function() {
+      location.href = 'https://open.spotify.com/browse/featured';
+    };
+
+    // display = 'block' debe suceder antes
+    modal.style.display = 'block';
+
+    setTimeout(function() {
+      // pasamos ambos opacity al setTimeout
+      modal.style.opacity = 1;
+      backdrop.style.opacity = .5;
+      div.querySelector('.modal-dialog').style.transform = 'translate(0,0)';
+    });
+
+    var remove = function() {
+      // pasamos opacity a 0 inmediatamente para iniciar la animación
+      modal.style.opacity = 0;
+      backdrop.style.opacity = 0;
+      setTimeout(function() {
+        // eliminamos el elemento después de 300 milisegundos
+        div.remove();
+      }, 300);
+    };
+    modal.addEventListener('click', function(e) {
+      if (e.target == modal) remove();
+    });
+    div.querySelector('button').addEventListener('click', remove);
+
+    return div;
   },
 
   setEventsFilters: function setEventsFilters(e) {
@@ -59,8 +121,6 @@ var view = {
     var placed = where.querySelector('#where');
     var radioLong = document.getElementsByName('long');
     var popu = popularity.querySelector('#popul');
-
-    
 
     feel.addEventListener('click', function() {
       that.onFeel(botones);
@@ -79,59 +139,9 @@ var view = {
     });
   },
 
-//   getModalAlbumes: function getModalAlbumes(albumes) {
-//     var div = document.createElement('div');
-//     div.setAttribute('class', 'modal');
-//     div.setAttribute('id', 'myModal');
-//     // div.id = 'myModal';
-//     div.innerHTML = `
-// <span class="close">×</span>
-// <img class="modal-content" id="contenido">
-// <div id="caption"></div>
-// `;
-//
-//     // MODAL
-//     // var modal = document.querySelector('#myModal');
-//     // var modal = document.getElementById('myModal');
-//
-//     // var img = document.getElementsByClassName('album');
-//     var img = biblio.getElementsByTagName('a');
-//     // var img = biblio.querySelector('img');
-//     var modalImg = document.getElementById('contenido');
-//     var captionText = document.getElementById('caption');
-//     var span = document.getElementsByClassName('close')[0];
-//
-//     var that = this;
-//
-//     console.log(img);
-//
-//     // img.addEventListener('click', function() {
-//     //   console.log(this);
-//     //   div.style.display = "block";
-//     //   modalImg.src = albumes.cover;
-//     //   captionText.innerHTML = albumes.album;
-//     // });
-//     //
-//     // span.addEventListener('click', function() {
-//     //   div.style.display = "none";
-//     // });
-//
-//
-//     img.onclick = function onclick() {
-//       div.style.display = "block";
-//       modalImg.src = albumes.cover;
-//       captionText.innerHTML = albumes.album;
-//     };
-//     span.onclick = function onclick() {
-//       div.style.display = "none";
-//     };
-//
-//     return div;
-//   },
-
   render: function(listaAlbumes) {
     var derecha = document.getElementById('derecha');
-    derecha.innerHTML=``;
+    derecha.innerHTML = ``;
 
     var biblioteca = this.getBiblioteca(listaAlbumes);
     var busqueda = this.getForm();

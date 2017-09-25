@@ -11,6 +11,10 @@ var controller = function controller(albumes) {
       });
     },
 
+    /*
+    *======LOS FILTROS FUNCIONAN POR SEPARADO======*
+    */
+
     view.onFeel = function onFeel(botones) {
       for (var i = 0; i < botones.length; i++) {
         var listaFeel = albumes.filter(function(albumes) {
@@ -22,11 +26,11 @@ var controller = function controller(albumes) {
     },
 
     view.onMany = function onMany() {
-          var listaMany = albumes.filter(function(albumes) {
-            return albumes.many == document.querySelector('#fMany').many.value;;
-          });
-          console.log(listaMany);
-          view.render(listaMany);
+      var listaMany = albumes.filter(function(albumes) {
+        return albumes.many == document.querySelector('#fMany').many.value;;
+      });
+      console.log(listaMany);
+      view.render(listaMany);
     },
 
     view.onWhere = function onWhere(placed) {
@@ -53,18 +57,6 @@ var controller = function controller(albumes) {
       view.render(listaPopu);
     },
 
-    // view.onModal = function onModal(modal, img, modalImg, captionText){
-    //   modal.style.display = "block";
-    //   modalImg.src = this.src;
-    //   captionText.innerHTML = this.alt;
-    //   console.log(modal);
-    // },
-    //
-    // view.closeModal = function (modal) {
-    //   modal.style.display = "none";
-    // }
-
-    //view.render(albumes);
     view.setEventsFilters();
 }
 

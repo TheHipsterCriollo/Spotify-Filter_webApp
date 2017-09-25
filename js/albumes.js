@@ -1,5 +1,4 @@
-var albumes = [
-  {
+var albumes = [{
     album: "A head full of dreams",
     autor: "Coldplay",
     cover: "./source/covers/1.jpg",
@@ -121,7 +120,7 @@ var albumes = [
     popularity: "4"
   },
   {
-    album: "the 20/20 Experience",
+    album: "The 20/20 Experience",
     autor: "Justin Timberlake",
     cover: "./source/covers/12.jpg",
     url: "https://open.spotify.com/album/0O82niJ0NpcptYRxogeEZu",
